@@ -30,6 +30,18 @@ body {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    height: 60vh; /* 60% of the viewport height on tablets and larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    height: 40vh; /* 40% of the viewport height on smaller screens */
+  }
+}
+
 /* If you're embedding your SVG inline, you might add: */
 .hero svg {
   width: 100%;
