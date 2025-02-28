@@ -20,7 +20,7 @@ body {
   /* If using an inline SVG inside .hero, no background property is needed.
      Otherwise, if you want to use an external SVG as a background: */
   background: url('hero-banner.svg') center/cover no-repeat;
-  height: 100vh;
+  height: 1000vh;
   position: relative;
   display: flex;
   align-items: center;
