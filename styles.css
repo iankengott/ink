@@ -27,6 +27,7 @@ body {
   justify-content: center;
   text-align: center;
   color: #000000;
+  background-size: cover;
 }
 
 /* If you're embedding your SVG inline, you might add: */
