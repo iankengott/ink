@@ -9,10 +9,10 @@ body {
   line-height: 1.6;
   color: #000000;
   background-color: #808080;
-  background-image: url('\images\logo.jpg');
+/*<!--  background-image: url('\images\logo.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: 100% 100%; -->*/
 }
 
 /* Hero Section */
@@ -31,7 +31,7 @@ body {
   justify-content: center;
   text-align: center;
   color: #000000;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 /* If you're embedding your SVG inline, you might add: */
