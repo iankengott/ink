@@ -48,7 +48,7 @@ body {
   color: #fff;
   background-image: url('/images/logo.jpg');
   justify-content: flex-start; /* Aligns children to the top */
-  padding-top: 100%;  /* Moves text down without shifting the background */
+  padding-top: 20%;  /* Moves text down without shifting the background */
   color: #fff;
 
   
