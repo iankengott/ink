@@ -116,7 +116,7 @@ body {
   text-align: center;
   /* Use a repeating sine wave image that tiles horizontally */
   background: url('/images/sine-wave.png') repeat-x;
-  background-size: auto; /* Adjust if necessary */
+  background-size: 100% 100%; /* Adjust if necessary */
   animation: moveSine 10s linear infinite;
 }
 .about .container {
