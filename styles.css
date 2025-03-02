@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  animation: zoomIn 1s ease-out forwards;
 }
 body {
   font-family: Arial, sans-serif;
@@ -56,7 +57,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   height: 100%;
   /*zoom*/
-  animation: zoomIn 1s ease-out forwards;
+  /*animation: zoomIn 1s ease-out forwards; */
   /* Fade in animation */
   /*animation: fadeInUp 1s ease-out forwards; */
 }
