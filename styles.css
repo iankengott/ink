@@ -3,7 +3,7 @@
     background-position: 0 0;
   }
   to {
-    background-position: 2000px 0; /* Adjust value based on your image width */
+    background-position: 1800px 0; /* Adjust value based on your image width */
   }
 }
 @keyframes bounce {
@@ -117,7 +117,7 @@ body {
   /* Use a repeating sine wave image that tiles horizontally */
   background: url('/images/sine-wave.png') repeat-x;
   background-size: 100% 100%; /* Adjust if necessary */
-  animation: moveSine 10s linear infinite;
+  animation: moveSine 60s linear infinite;
 }
 .about .container {
   max-width: 800px;
