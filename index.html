@@ -37,14 +37,23 @@
   <section class="portfolio">
     <h2>My Projects</h2>
     <div class="portfolio-container">
-      <div class="project-card">
-        <img src="images/unnamed.png" alt="Project 1" />
-        <div class="overlay">
-          <h3>Project 1</h3>
-          <p>Short description of project 1.</p>
-          <a href="#" class="view-details">View Details</a>
-        </div>
-      </div>
+      <div class="project-card" data-image="images/unnamed.png" data-text="This is the description of Project 1.">
+  <img src="images/unnamed.png" alt="Project 1" />
+  <div class="overlay">
+    <h3>Project 1</h3>
+    <p>Short description of project 1.</p>
+    <a href="#" class="view-details">View Details</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modal-image" src="" alt="Project Image">
+    <p id="modal-text">Project description goes here.</p>
+  </div>
+</div>
       <div class="project-card">
         <img src="project2.jpg" alt="Project 2" />
         <div class="overlay">
