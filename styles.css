@@ -235,6 +235,7 @@ body {
   max-width: 500px;            /* Maximum width */
   text-align: center;
   position: relative;
+  animation: zoomIn 1s ease-out forwards
 }
 
 /* Close button */
