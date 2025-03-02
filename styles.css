@@ -194,3 +194,7 @@ body {
   font-weight: bold;
   cursor: pointer; 
 }
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .6);
+}
