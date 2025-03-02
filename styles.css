@@ -113,7 +113,7 @@ body {
 .about {
   padding: 4rem 2rem;
   /* The first value is the background color and the second is the image */
-  background: #555 url('images/e.jpg') repeat-x;
+  background: #808080 url('images/e.jpg') repeat-x;
   background-size: 100% 100%; /* Adjust the image zoom if needed */
   animation: moveSine 60s linear infinite;
   text-align: center;
