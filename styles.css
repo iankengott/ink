@@ -24,7 +24,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  animation: zoomIn 1s ease-out forwards;
+
 }
 body {
   font-family: Arial, sans-serif;
@@ -33,6 +33,7 @@ body {
   background-color: #808080;
   width: 100%;
   height: 100%;
+  animation: zoomIn 1s ease-out forwards;
 }
 
 /* Hero Section */
