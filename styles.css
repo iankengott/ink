@@ -101,7 +101,7 @@ body {
 }
 .logo-text {
   position: absolute;
-  top: 30px; /* Adjust this value to move text down */
+  top: 1%; /* Adjust this value to move text down */
   left: 0;
   right: 0;
   text-align: center;
