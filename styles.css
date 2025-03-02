@@ -123,12 +123,15 @@ body {
   margin: 0 auto;
 }
 .about h2 {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 .about p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  
 }
 .btn {
   background: #333;
