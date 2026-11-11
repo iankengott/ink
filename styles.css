@@ -287,6 +287,17 @@ a {
   max-width: 560px;
 }
 
+.portrait {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--line), var(--shadow);
+}
+
 .eyebrow,
 .num,
 .tag,
@@ -758,6 +769,12 @@ a {
 
   .brand span {
     display: none;
+  }
+
+  .portrait {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 20px;
   }
 
   .hero {
