@@ -99,6 +99,9 @@
 
       <div class="research-grid">
         <article class="r-card reveal">
+          <a class="media" href="https://www.usf.edu/arts-sciences/chronicles/2025/innovative-research-on-ferrimagnetic-materials-earns-millions-in-funding-to-advance-communication-technologies.aspx" target="_blank" rel="noopener">
+            <img src="images/lab-fmr.jpg" alt="A measurement setup on an optical table in the Magnetic Materials and Spin Dynamics Lab at USF" loading="lazy" width="900" height="602" />
+          </a>
           <h3>Magnonics and magnetic materials</h3>
           <p>
             Research support for Dr. Arena's Magnetic Materials and Spin Dynamics Lab,
@@ -108,9 +111,28 @@
           </p>
           <ul class="chips"><li>Spin dynamics</li><li>Spectroscopy</li><li>Nanomagnetism</li></ul>
           <a class="more" href="https://www.usf.edu/arts-sciences/departments/physics/research/labs/magnetic-materials-dynamics/" target="_blank" rel="noopener">Lab page ↗</a>
+          <p class="credit">Photo: University of South Florida, from its story on the lab.</p>
         </article>
 
         <article class="r-card reveal">
+          <div class="media diagram">
+            <svg viewBox="0 0 300 200" role="img" aria-label="Schematic: two muon tracks pass a top detector, bend in opposite directions in a magnetic field, and only one reaches the offset bottom detector">
+              <rect class="d-field" x="40" y="62" width="220" height="76" rx="6" />
+              <g class="d-b">
+                <circle cx="70" cy="100" r="7" /><path d="M65 95l10 10M75 95l-10 10" />
+                <circle cx="230" cy="100" r="7" /><path d="M225 95l10 10M235 95l-10 10" />
+              </g>
+              <rect class="d-det" x="110" y="26" width="80" height="9" rx="2" />
+              <rect class="d-det" x="148" y="165" width="80" height="9" rx="2" />
+              <path class="d-pos" d="M150 8 L150 62 Q150 110 178 138 L206 166" />
+              <path class="d-neg" d="M150 8 L150 62 Q150 110 122 138 L88 172" />
+              <text x="196" y="24" class="d-t">A</text>
+              <text x="234" y="163" class="d-t">B</text>
+              <text x="212" y="190" class="d-t d-tp">μ⁺ counted</text>
+              <text x="52" y="190" class="d-t d-tn">μ⁻ missed</text>
+              <text x="48" y="80" class="d-t">B field</text>
+            </svg>
+          </div>
           <h3>Muon telescope</h3>
           <p>
             Simulation for a telescope that sorts cosmic-ray muons by charge. A magnetic
@@ -119,9 +141,13 @@
             Carlo to a native Geant4 simulation.
           </p>
           <ul class="chips"><li>Geant4</li><li>C++</li><li>Detector physics</li></ul>
+          <p class="credit">Schematic, not to scale.</p>
         </article>
 
         <article class="r-card reveal">
+          <a class="media" href="https://docs.spectromicroscopy.com/" target="_blank" rel="noopener">
+            <img class="shot" src="images/mantis-pca.png" alt="MANTiS PCA tab showing eigenvalues, a component image, and its spectrum" loading="lazy" width="1002" height="832" />
+          </a>
           <h3>MANTiS and x-ray spectromicroscopy</h3>
           <p>
             Packaging and workflow notes for MANTiS, the multivariate analysis toolkit
@@ -131,6 +157,7 @@
           </p>
           <ul class="chips"><li>Nix</li><li>Python</li><li>Hyperspectral data</li></ul>
           <a class="more" href="https://github.com/iankengott/mantis-tiff-gif-converter" target="_blank" rel="noopener">Converter on GitHub ↗</a>
+          <p class="credit">Screenshot: MANTiS documentation.</p>
         </article>
       </div>
 
@@ -166,7 +193,7 @@
           <span class="p-link">Open the hub ↗</span>
         </a>
 
-        <a class="p-card wide reveal" data-kind="web" href="https://frosted-meadow-3e82cb6693.lakebed.app" target="_blank" rel="noopener">
+        <a class="p-card reveal" data-kind="web" href="https://frosted-meadow-3e82cb6693.lakebed.app" target="_blank" rel="noopener">
           <span class="p-meta">Interactive timeline · 2026</span>
           <h3>What could AI do, and when?</h3>
           <p>
@@ -177,13 +204,14 @@
           <span class="p-link">Open the timeline ↗</span>
         </a>
 
-        <a class="p-card reveal" data-kind="research" href="https://github.com/iankengott/Arbor" target="_blank" rel="noopener">
+        <a class="p-card wide split reveal" data-kind="research" href="https://github.com/iankengott/Arbor" target="_blank" rel="noopener">
+          <img class="p-img" src="images/arbor-framework.jpg" alt="Arbor framework diagram: a coordinator grows a hypothesis tree and dispatches executors" loading="lazy" width="1500" height="811" />
           <span class="p-meta">Python · Nix · 2026</span>
           <h3>Arbor fork</h3>
           <p>
             A fork of the Arbor autonomous research loop with a cleaner Python package
             layout, a tested local setup, and a Nix scaffold for reproducible
-            simulation runs.
+            simulation runs. Diagram from the upstream Arbor project.
           </p>
           <span class="p-link">Repository ↗</span>
         </a>
