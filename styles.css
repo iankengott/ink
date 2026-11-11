@@ -8,6 +8,7 @@
   --ink-3: #7b7d88;
   --line: rgba(20, 21, 26, 0.14);
   --accent: #2b46c8;
+  --hot: #c8452b;
   --accent-soft: rgba(43, 70, 200, 0.1);
   --card: rgba(255, 255, 255, 0.55);
   --shadow: 0 18px 40px -24px rgba(20, 21, 26, 0.35);
@@ -27,6 +28,7 @@
     --ink-3: #7d7f8a;
     --line: rgba(236, 235, 230, 0.14);
     --accent: #8fa2ff;
+    --hot: #ff8a6b;
     --accent-soft: rgba(143, 162, 255, 0.12);
     --card: rgba(255, 255, 255, 0.035);
     --shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.8);
@@ -42,6 +44,7 @@
   --ink-3: #7d7f8a;
   --line: rgba(236, 235, 230, 0.14);
   --accent: #8fa2ff;
+  --hot: #ff8a6b;
   --accent-soft: rgba(143, 162, 255, 0.12);
   --card: rgba(255, 255, 255, 0.035);
   --shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.8);
@@ -226,9 +229,62 @@ a {
   pointer-events: none;
 }
 
+.wave-note {
+  position: absolute;
+  right: max(20px, calc((100vw - var(--wrap)) / 2));
+  bottom: 22px;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-3);
+  pointer-events: none;
+}
+
+.wave-note b {
+  display: block;
+  font-weight: 500;
+  color: var(--ink-2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wave-note .hint {
+  display: block;
+}
+
+.wave-note sub {
+  font-size: 0.8em;
+  line-height: 0;
+}
+
+.wave-note i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 3px 0 6px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+
+.wave-note i.cold {
+  background: var(--accent);
+  margin-left: 0;
+}
+
+.wave-note i.hot {
+  background: var(--hot);
+}
+
+@media (hover: none) {
+  .wave-note .hint {
+    display: none;
+  }
+}
+
 .hero-text {
   position: relative;
-  max-width: 620px;
+  max-width: 560px;
 }
 
 .eyebrow,
@@ -706,7 +762,15 @@ a {
 
   .hero {
     min-height: 0;
-    padding: 56px 16px 310px;
+    padding: 56px 16px 380px;
+  }
+
+  .wave-note {
+    left: 16px;
+    right: 16px;
+    bottom: 12px;
+    text-align: center;
+    font-size: 10.5px;
   }
 
   .section {
