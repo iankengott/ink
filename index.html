@@ -3,84 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ian kengott - ink</title>
-  <link rel="shortcut icon" href="/images/physics-svgrepo-com.svg" type="image/x-icon" />
+  <title>Ian Kengott — ink</title>
+  <meta name="description" content="Ian Kengott: physics at the University of South Florida, magnetic materials research support, research software, and things built on the side." />
+  <meta property="og:title" content="Ian Kengott — ink" />
+  <meta property="og:description" content="Physics at USF, magnetic materials research support, research software, and side projects." />
+  <meta property="og:image" content="https://ink-ten.vercel.app/images/323logo.jpg" />
+  <meta name="theme-color" content="#0e0f12" />
+  <link rel="icon" href="images/physics-svgrepo-com.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply the saved theme before first paint.
+    try {
+      var t = localStorage.getItem('ink-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
 </head>
 <body>
-  <!-- Hero Banner -->
-  <header class="hero">
-    <div class="hero-content">
-      <!-- Logo Banner with Background Image -->
-      <div class="logo-banner" style="background-image: url('/images/323logo.jpg');">
-        <div class="logo-text">
-        <h1>Ian kengott</h1>
-        <p>Learn & return, Live & desire, Elate & resonate</p>
-        </div>
-      </div>
-    </div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Ian Kengott, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" /><path d="M3 16c4-9 8-9 13 0s9 9 13 0" /></svg>
+      <span>ink</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#earlier">Earlier</a>
+      <a href="#links">Links</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M12 3.5a8.5 8.5 0 0 0 0 17z" class="half" /></svg>
+    </button>
   </header>
 
-  <!-- About Me Section -->
-  <section class="about">
-    <div class="container">
-      <h1></h1>
-      <h2>About Me</h2>
-      <p>
-        I'm a curious, driven individual passionate about continuous learning and creative problem-solving. With strengths in strategic planning, innovative thinking, and effective communication, I've led projects that deliver real results. I thrive on challenges and always aim to make a meaningful impact.
-      </p>
-      <a href="images/uc-essay2.docx" download class="btn">Download Resume</a>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section class="portfolio">
-    <h2>My Projects</h2>
-    <div class="portfolio-container">
-      <div class="project-card" data-image="images/unnamed.png" data-text="I’ve always been passionate about exploring the frontiers of AI. I attended a Stanford AI camp in July 2022, where I was part of a team that developed an innovative system for reporting car crashes. My journey didn’t stop there—I’ve been actively involved in my robotics club, contributing to projects that included lunar exploration challenges and even a NASA-sponsored competition. More recently, I’ve dived into the realm of quantum computing, working with IBM’s Qiskit module to integrate quantum principles into practical applications. Each of these experiences has fueled my continuous learning and pushed me to blend creativity with technical expertise.">
-  <img src="images/unnamed.png" alt="Project 1" />
-  <div class="overlay">
-    <h3>Project:me</h3>
-    <p>I advanced my AI journey by building a car crash reporting system at Stanford, contributing to NASA robotics projects, and exploring quantum computing with IBM Qiskit.</p>
-    <a href="#" class="view-details">View Details</a>
-  </div>
-</div>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modal-image" src="" alt="Project Image">
-    <p id="modal-text">I advanced my AI journey by building a car crash reporting system at Stanford, contributing to NASA robotics projects, and exploring quantum computing with IBM Qiskit.</p>
-  </div>
-</div>
-<div class="project-card" data-image="images/nasa.png" data-text="This is the description of Project 1.">
-  <img src="images/nasa.png" alt="Project 1" />
-  <div class="overlay">
-    <h3>Project 1</h3>
-    <p>Short description of project 1.</p>
-    <a href="#" class="view-details">View Details</a>
-  </div>
-</div>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modal-image" src="" alt="Project Image">
-    <p id="modal-text">Project description goes here.</p>
-  </div>
-</div>
-        <img src="project3.jpg" alt="Project 3" />
-        <div class="overlay">
-          <h3>Project 3</h3>
-          <p>Short description of project 3.</p>
-          <a href="#" class="view-details">View Details</a>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <canvas id="wave" aria-hidden="true"></canvas>
+      <div class="hero-text">
+        <p class="eyebrow">USF Physics · Tampa, FL</p>
+        <h1>Ian Kengott</h1>
+        <p class="lede">
+          I study physics at the University of South Florida, where I work on projects
+          connected to Dr. Arena's Magnetic Materials and Spin Dynamics Lab. Outside the
+          lab I write research software and build things I want to exist.
+        </p>
+        <div class="cta">
+          <a class="btn solid" href="#research">See the research</a>
+          <a class="btn" href="https://github.com/iankengott" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
+        <p class="motto">Learn &amp; return, live &amp; desire, elate &amp; resonate.</p>
       </div>
-      <!-- Add more project cards as needed -->
-    </div>
-  </section>
+    </section>
+
+    <!-- Now -->
+    <section class="now reveal" aria-label="Current work">
+      <div class="now-item">
+        <span class="tag">Research</span>
+        <p>Magnonics and spin dynamics in magnetic materials</p>
+      </div>
+      <div class="now-item">
+        <span class="tag">Simulation</span>
+        <p>A charge-selecting muon telescope, modeled in Geant4</p>
+      </div>
+      <div class="now-item">
+        <span class="tag">Tooling</span>
+        <p>Reproducible Nix builds for x-ray spectromicroscopy software</p>
+      </div>
+      <div class="now-item">
+        <span class="tag">On the side</span>
+        <p>Regnum, a Minecraft mod where you program your magic</p>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research">
+      <div class="section-head reveal">
+        <span class="num">01</span>
+        <h2>Research</h2>
+        <p>Lab work comes first. Most of it sits around one group at USF.</p>
+      </div>
+
+      <div class="research-grid">
+        <article class="r-card reveal">
+          <h3>Magnonics and magnetic materials</h3>
+          <p>
+            Research support for Dr. Arena's Magnetic Materials and Spin Dynamics Lab,
+            which studies nanomagnetism, electronic structure, and spin dynamics with
+            x-ray and neutron probes. My part is on the magnonics side: spin waves as
+            a way to carry and process signals.
+          </p>
+          <ul class="chips"><li>Spin dynamics</li><li>Spectroscopy</li><li>Nanomagnetism</li></ul>
+          <a class="more" href="https://www.usf.edu/arts-sciences/departments/physics/research/labs/magnetic-materials-dynamics/" target="_blank" rel="noopener">Lab page ↗</a>
+        </article>
+
+        <article class="r-card reveal">
+          <h3>Muon telescope</h3>
+          <p>
+            Simulation for a telescope that sorts cosmic-ray muons by charge. A magnetic
+            field bends μ⁺ and μ⁻ in opposite directions, and an offset detector pair
+            in coincidence keeps one sign. I'm moving the model from a Python Monte
+            Carlo to a native Geant4 simulation.
+          </p>
+          <ul class="chips"><li>Geant4</li><li>C++</li><li>Detector physics</li></ul>
+        </article>
+
+        <article class="r-card reveal">
+          <h3>MANTiS and x-ray spectromicroscopy</h3>
+          <p>
+            Packaging and workflow notes for MANTiS, the multivariate analysis toolkit
+            for hyperspectral x-ray data: preprocessing, PCA, cluster analysis, spectral
+            maps, and peak fitting. I also wrote a small converter between GIF stacks
+            and MANTiS TIFF stacks with their energy lists.
+          </p>
+          <ul class="chips"><li>Nix</li><li>Python</li><li>Hyperspectral data</li></ul>
+          <a class="more" href="https://github.com/iankengott/mantis-tiff-gif-converter" target="_blank" rel="noopener">Converter on GitHub ↗</a>
+        </article>
+      </div>
+
+      <p class="aside reveal">
+        A longer, research-only version of this page lives at
+        <a href="https://iankengott.github.io/ian-kengott-site/" target="_blank" rel="noopener">iankengott.github.io/ian-kengott-site</a>.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="num">02</span>
+        <h2>Projects</h2>
+        <p>Public work. Everything here links to something you can open.</p>
+      </div>
+
+      <div class="filters reveal" role="group" aria-label="Filter projects">
+        <button type="button" class="chip-btn on" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip-btn" data-filter="research" aria-pressed="false">Research tools</button>
+        <button type="button" class="chip-btn" data-filter="games" aria-pressed="false">Games</button>
+        <button type="button" class="chip-btn" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" class="chip-btn" data-filter="systems" aria-pressed="false">Systems</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <a class="p-card feature full reveal" data-kind="games" href="https://iankengott.github.io/regnum-hub/" target="_blank" rel="noopener">
+          <span class="p-meta">Minecraft · NeoForge 1.21.1 · 2026</span>
+          <h3>Regnum</h3>
+          <p>
+            Magic you have to program. You place sigils on a circle, the game reads
+            them clockwise and compiles what you drew, and a broken circle faults at
+            the exact sigil that's wrong. Eight repositories: the Vector-Regnum magic
+            mod plus origins, combat, progression, world and story, administration,
+            and the modpack.
+          </p>
+          <span class="p-link">Open the hub ↗</span>
+        </a>
+
+        <a class="p-card wide reveal" data-kind="web" href="https://frosted-meadow-3e82cb6693.lakebed.app" target="_blank" rel="noopener">
+          <span class="p-meta">Interactive timeline · 2026</span>
+          <h3>What could AI do, and when?</h3>
+          <p>
+            AI history from Turing's 1950 thought experiment to current models, with
+            capability notes per milestone and curves for how fast the cost of a task
+            has fallen.
+          </p>
+          <span class="p-link">Open the timeline ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="research" href="https://github.com/iankengott/Arbor" target="_blank" rel="noopener">
+          <span class="p-meta">Python · Nix · 2026</span>
+          <h3>Arbor fork</h3>
+          <p>
+            A fork of the Arbor autonomous research loop with a cleaner Python package
+            layout, a tested local setup, and a Nix scaffold for reproducible
+            simulation runs.
+          </p>
+          <span class="p-link">Repository ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="research" href="https://github.com/iankengott/mantis-tiff-gif-converter" target="_blank" rel="noopener">
+          <span class="p-meta">Python · 2026</span>
+          <h3>MANTiS TIFF/GIF converter</h3>
+          <p>
+            Converts between animated GIF stacks and MANTiS TIFF stacks, carrying the
+            energy list along in the GIF's metadata. GUI and command line.
+          </p>
+          <span class="p-link">Repository ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="systems" href="https://github.com/iankengott/vlc-redesign-nix" target="_blank" rel="noopener">
+          <span class="p-meta">Nix · 2026</span>
+          <h3>vlc-redesign-nix</h3>
+          <p>
+            A Nix flake that builds dsojevic's VLC 4.0 redesign for NixOS. Packaging
+            only; the redesign is theirs.
+          </p>
+          <span class="p-link">Repository ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="web" href="https://quantumsubpage.vercel.app" target="_blank" rel="noopener">
+          <span class="p-meta">TypeScript · 2025</span>
+          <h3>q-calc</h3>
+          <p>A quantum calculator you drive from a terminal in the browser.</p>
+          <span class="p-link">Open it ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="systems" href="https://github.com/iankengott/yt-dlp-gui" target="_blank" rel="noopener">
+          <span class="p-meta">Python · 2025</span>
+          <h3>yt-dlp-gui</h3>
+          <p>A small desktop front end for yt-dlp.</p>
+          <span class="p-link">Repository ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="web" href="https://nasawebsite-five.vercel.app" target="_blank" rel="noopener">
+          <span class="p-meta">Web · 2025</span>
+          <h3>Artemis</h3>
+          <p>A walk through NASA's Artemis missions, from how the program started to the planned landings.</p>
+          <span class="p-link">Open it ↗</span>
+        </a>
+
+        <a class="p-card reveal" data-kind="web" href="https://ohm-zeta.vercel.app" target="_blank" rel="noopener">
+          <span class="p-meta">Web · 2025</span>
+          <h3>Ohm's law calculator</h3>
+          <p>Fill in two of voltage, current, and resistance; it solves the third on a labeled circuit.</p>
+          <span class="p-link">Open it ↗</span>
+        </a>
+      </div>
+      <p class="empty" id="empty" hidden>Nothing in that category yet.</p>
+    </section>
+
+    <!-- Earlier -->
+    <section class="section" id="earlier">
+      <div class="section-head reveal">
+        <span class="num">03</span>
+        <h2>Earlier</h2>
+        <p>How I got here.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="when">2025</span>
+          <div>
+            <h3>Quantum computing with Qiskit</h3>
+            <p>Worked through IBM's Qiskit to put quantum circuits to practical use, which turned into q-calc.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">High school</span>
+          <div>
+            <h3>Robotics club and NASA challenges</h3>
+            <p>Lunar exploration projects with my robotics club, including NASA's App Development Challenge.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">July 2022</span>
+          <div>
+            <h3>Stanford AI camp</h3>
+            <p>Part of a team that built a system for reporting car crashes.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Links -->
+    <section class="section links" id="links">
+      <div class="section-head reveal">
+        <span class="num">04</span>
+        <h2>Links</h2>
+      </div>
+      <div class="link-row reveal">
+        <a href="https://github.com/iankengott" target="_blank" rel="noopener"><span>GitHub</span><em>@iankengott ↗</em></a>
+        <a href="https://iankengott.github.io/ian-kengott-site/" target="_blank" rel="noopener"><span>Research site</span><em>ian-kengott-site ↗</em></a>
+        <a href="https://iankengott.github.io/regnum-hub/" target="_blank" rel="noopener"><span>Regnum</span><em>regnum-hub ↗</em></a>
+        <a href="https://www.usf.edu/arts-sciences/departments/physics/research/labs/magnetic-materials-dynamics/" target="_blank" rel="noopener"><span>The lab</span><em>USF Physics ↗</em></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="year">2026</span> Ian Kengott</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
