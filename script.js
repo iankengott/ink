@@ -72,13 +72,13 @@
   }
 
   function layout() {
-    var narrow = W < 760;
+    var narrow = W < 1000;   // phones and portrait tablets: film sits under the text
     var span = (NX + NY) * CA;
     var s, cx, cy;
     if (narrow) {
-      s = (W * 0.93) / span;
+      s = Math.min(W * 0.93, 740) / span;
       cx = W * 0.5;
-      cy = H - (NX + NY) * SA * s * 0.5 - 118;
+      cy = H - (NX + NY) * SA * s * 0.5 - 104 - s * 1.6;
     } else {
       // Use the space to the right of the headline, bleeding slightly off the edge.
       var text = document.querySelector('.hero-text');
@@ -286,6 +286,12 @@
       pointer.y = e.clientY - r.top;
       pointer.target = 1;
       if (reduceMotion) { pointer.on = 1; draw(0); }
+    }, { passive: true });
+    hero.addEventListener('pointerdown', function (e) {
+      var r = canvas.getBoundingClientRect();
+      pointer.x = e.clientX - r.left;
+      pointer.y = e.clientY - r.top;
+      pointer.target = 1;
     }, { passive: true });
     hero.addEventListener('pointerleave', function () { pointer.target = 0; });
 
